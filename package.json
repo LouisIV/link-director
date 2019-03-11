@@ -1,0 +1,57 @@
+{
+  "name": "link-director",
+  "version": "1.0.0",
+  "description": "Direct your links.",
+  "main": "index.js",
+  "module": "lib/index.esm.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LouisIV/link-director.git"
+  },
+  "author": "Louis Lombardo iv <louis@lombardo.work>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "clean": "rimraf lib",
+    "test": "yarn jest",
+    "test:watch": "yarn jest --watch --notify",
+    "cover": "jest --coverage",
+    "lint": "eslint src",
+    "build": "yarn rollup -c",
+    "precommit": "yarn lint && yarn test",
+    "prepublishOnly": "yarn clean && yarn lint && yarn test && yarn build"
+  },
+  "engines": {
+    "node": ">= 8.x"
+  },
+  "keywords": [
+    "lib-package-boilerplate",
+    "package-boilerplate",
+    "nodejs-package-boilerplate"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^23.6.0",
+    "babel-plugin-rewire": "^1.2.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^5.6.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jest": "^21.23.0",
+    "husky": "^1.0.1",
+    "jest": "^23.6.0",
+    "rimraf": "^2.6.2",
+    "rollup": "^0.66.2",
+    "rollup-plugin-babel": "3",
+    "rollup-plugin-cpy": "^1.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn precommit"
+    }
+  }
+}
