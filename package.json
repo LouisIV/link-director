@@ -16,13 +16,13 @@
   "private": false,
   "scripts": {
     "clean": "rimraf lib",
-    "test": "jest --config jestconfig.json",
+    "test": "jest --config jestconfig.json && codecov",
     "test:watch": "yarn jest --watch --notify --config jestconfig.json",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "tslint -p tsconfig.json",
     "build": "tsc",
     "precommit": "yarn lint && yarn test",
-    "prepublishOnly": "yarn clean && yarn lint && yarn test && codecov && yarn build"
+    "prepublishOnly": "yarn clean && yarn lint && yarn test && yarn build"
   },
   "engines": {
     "node": ">= 8.x"
