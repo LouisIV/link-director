@@ -22,7 +22,7 @@
     "lint": "tslint -p tsconfig.json",
     "build": "tsc",
     "precommit": "yarn lint && yarn test",
-    "prepublishOnly": "yarn clean && yarn lint && yarn test && yarn build"
+    "prepublishOnly": "yarn clean && yarn lint && yarn test && codecov && yarn build"
   },
   "engines": {
     "node": ">= 8.x"
