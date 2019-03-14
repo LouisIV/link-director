@@ -8,16 +8,19 @@
     "type": "git",
     "url": "git+https://github.com/LouisIV/link-director.git"
   },
+  "files": [
+    "lib/**/*"
+  ],
   "author": "Louis Lombardo iv <louis@lombardo.work>",
   "license": "MIT",
   "private": false,
   "scripts": {
     "clean": "rimraf lib",
-    "test": "yarn jest",
-    "test:watch": "yarn jest --watch --notify",
-    "cover": "jest --coverage",
-    "lint": "eslint src",
-    "build": "yarn rollup -c",
+    "test": "jest --config jestconfig.json",
+    "test:watch": "yarn jest --watch --notify --config jestconfig.json",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json",
+    "build": "tsc",
     "precommit": "yarn lint && yarn test",
     "prepublishOnly": "yarn clean && yarn lint && yarn test && yarn build"
   },
@@ -29,25 +32,17 @@
     "package-boilerplate",
     "nodejs-package-boilerplate"
   ],
-  "dependencies": {},
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.3",
-    "babel-eslint": "^10.0.1",
-    "babel-jest": "^23.6.0",
-    "babel-plugin-rewire": "^1.2.0",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
-    "eslint": "^5.6.1",
-    "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-jest": "^21.23.0",
+    "@types/es6-promise": "^3.3.0",
+    "@types/jest": "^24.0.11",
+    "codecov": "^3.1.0",
     "husky": "^1.0.1",
-    "jest": "^23.6.0",
-    "rimraf": "^2.6.2",
-    "rollup": "^0.66.2",
-    "rollup-plugin-babel": "3",
-    "rollup-plugin-cpy": "^1.0.0"
+    "jest": "^24.3.1",
+    "prettier": "^1.13.2",
+    "ts-jest": "^24.0.0",
+    "tslint": "^5.13.1",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.3.3333"
   },
   "husky": {
     "hooks": {
