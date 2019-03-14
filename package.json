@@ -1,6 +1,6 @@
 {
   "name": "link-director",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Direct your links.",
   "main": "index.js",
   "module": "lib/index.esm.js",
@@ -28,9 +28,7 @@
     "node": ">= 8.x"
   },
   "keywords": [
-    "lib-package-boilerplate",
-    "package-boilerplate",
-    "nodejs-package-boilerplate"
+    "links"
   ],
   "devDependencies": {
     "@types/es6-promise": "^3.3.0",
