@@ -1,6 +1,6 @@
 {
   "name": "link-director",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Direct your links.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
